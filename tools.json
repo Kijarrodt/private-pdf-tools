@@ -1,0 +1,244 @@
+[
+  {
+    "id": "merge-pdf", "slug": "merge-pdf-files-online", "toolName": "Merge PDF Files", "mode": "merge",
+    "title": "Merge PDF Files Online Free - Combine PDFs Safely", "h1": "Merge & Combine PDF Files",
+    "description": "Combine multiple PDF documents into a single file securely in your browser. No files are uploaded to any server.",
+    "faqs": [
+      { "q": "How do I merge PDFs securely?", "a": "Select multiple PDF files above. The merge process happens entirely in your local browser." },
+      { "q": "Is there a file size limit?", "a": "Since it runs locally, you can merge large files up to your device's RAM capacity." }
+    ]
+  },
+  {
+    "id": "combine-pdf", "slug": "combine-pdf-documents", "toolName": "Combine PDF", "mode": "merge",
+    "title": "Combine PDF Documents Online Free - Private PDF Joiner", "h1": "Combine PDF Documents",
+    "description": "Join two or more PDF files together in seconds. 100% client-side processing for maximum privacy.",
+    "faqs": [
+      { "q": "Can I combine scanned documents?", "a": "Yes, scanned PDFs can be joined together without losing quality." }
+    ]
+  },
+  {
+    "id": "join-pdf", "slug": "join-pdf-pages-online", "toolName": "Join PDF", "mode": "merge",
+    "title": "Join PDF Files Online Free - Secure PDF Merger", "h1": "Join PDF Pages & Files",
+    "description": "Append multiple PDF files into one continuous document instantly without installing software.",
+    "faqs": [
+      { "q": "Are my files uploaded?", "a": "No, this tool uses HTML5 and WebAssembly to join PDFs offline in your browser." }
+    ]
+  },
+  {
+    "id": "merge-2-pdf", "slug": "merge-two-pdf-files", "toolName": "Merge 2 PDFs", "mode": "merge",
+    "title": "Merge Two PDF Files Online Free - Fast & Private", "h1": "Merge Two PDF Files",
+    "description": "Quickly stitch two separate PDF files together into one clean document.",
+    "faqs": [
+      { "q": "How to merge exactly 2 PDFs?", "a": "Select both files from your device and click Merge to combine them instantly." }
+    ]
+  },
+  {
+    "id": "merge-multiple-pdf", "slug": "merge-multiple-pdf-files", "toolName": "Merge Multiple PDFs", "mode": "merge",
+    "title": "Merge Multiple PDF Files Online - Bulk Combiner", "h1": "Merge Multiple PDF Files in Bulk",
+    "description": "Combine dozens of PDF files into a single master document for reporting or archiving.",
+    "faqs": [
+      { "q": "Can I merge more than 10 files?", "a": "Free tier merges up to 3 files at once. Unlock Pro to merge unlimited files simultaneously." }
+    ]
+  },
+  {
+    "id": "merge-invoices", "slug": "merge-pdf-invoices-receipts", "toolName": "Merge PDF Invoices", "mode": "merge",
+    "title": "Merge PDF Invoices & Receipts Online Free", "h1": "Merge PDF Invoices & Receipts",
+    "description": "Organize your billing by combining multiple PDF invoices and receipts into one monthly file securely.",
+    "faqs": [
+      { "q": "Is it safe for financial documents?", "a": "Yes, processing is 100% local, so your financial data is never intercepted." }
+    ]
+  },
+  {
+    "id": "jpg-to-pdf", "slug": "convert-jpg-to-pdf-online", "toolName": "JPG to PDF", "mode": "img-to-pdf",
+    "title": "JPG to PDF Converter Online Free - High Quality", "h1": "Convert JPG to PDF",
+    "description": "Convert JPG and JPEG photos into a single PDF document instantly. Perfect for ID cards and assignments.",
+    "faqs": [
+      { "q": "How to turn photos into a PDF?", "a": "Select your JPG files and the tool will place each photo onto a new PDF page." }
+    ]
+  },
+  {
+    "id": "png-to-pdf", "slug": "convert-png-to-pdf-online", "toolName": "PNG to PDF", "mode": "img-to-pdf",
+    "title": "PNG to PDF Converter Online Free - Transparent to PDF", "h1": "Convert PNG to PDF",
+    "description": "Transform PNG screenshots and graphics into PDF format without losing resolution.",
+    "faqs": [
+      { "q": "Does this work with transparent PNGs?", "a": "Yes, transparent areas will appear with a clean white background in the final PDF." }
+    ]
+  },
+  {
+    "id": "image-to-pdf", "slug": "image-to-pdf-converter", "toolName": "Image to PDF", "mode": "img-to-pdf",
+    "title": "Image to PDF Converter Online Free - Private Photo Scanner", "h1": "Image to PDF Converter",
+    "description": "Convert images into PDF format safely. Works offline once the page loads.",
+    "faqs": [
+      { "q": "Which image formats are supported?", "a": "You can convert standard JPG, JPEG, and PNG images into PDF." }
+    ]
+  },
+  {
+    "id": "photo-to-pdf", "slug": "photo-to-pdf-maker", "toolName": "Photo to PDF", "mode": "img-to-pdf",
+    "title": "Photo to PDF Maker Online Free - Turn Pictures to PDF", "h1": "Photo to PDF Maker",
+    "description": "Turn camera photos and gallery pictures into PDF documents for easy sharing.",
+    "faqs": [
+      { "q": "Will the photos be compressed?", "a": "The photos are embedded directly into the PDF at their original resolution." }
+    ]
+  },
+  {
+    "id": "id-card-to-pdf", "slug": "id-card-ktp-to-pdf", "toolName": "ID Card (KTP) to PDF", "mode": "img-to-pdf",
+    "title": "ID Card / KTP to PDF Converter Online Free", "h1": "ID Card to PDF Converter",
+    "description": "Convert photos of your ID card, passport, or KTP into a formal PDF file for online applications.",
+    "faqs": [
+      { "q": "Is it safe to upload my ID?", "a": "It is completely safe because no files are actually uploaded. It happens locally in your browser." }
+    ]
+  },
+  {
+    "id": "receipt-to-pdf", "slug": "receipt-photo-to-pdf", "toolName": "Receipt Photo to PDF", "mode": "img-to-pdf",
+    "title": "Receipt Photo to PDF Converter Online Free", "h1": "Receipt to PDF Converter",
+    "description": "Take pictures of your expense receipts and convert them into a consolidated PDF report.",
+    "faqs": [
+      { "q": "Can I add multiple receipts?", "a": "Yes, upload multiple receipt photos to combine them into one multi-page PDF." }
+    ]
+  },
+  {
+    "id": "split-pdf", "slug": "split-pdf-pages-online", "toolName": "Split PDF", "mode": "extract",
+    "title": "Split PDF Pages Online Free - Extract Pages Safely", "h1": "Split & Extract PDF Pages",
+    "description": "Extract specific pages or split a large PDF into a smaller document instantly in your browser.",
+    "faqs": [
+      { "q": "How do I split a PDF?", "a": "Upload the PDF, enter the page numbers you want to keep (e.g., 1-5, 8), and click Convert." }
+    ]
+  },
+  {
+    "id": "extract-pdf", "slug": "extract-pdf-pages", "toolName": "Extract PDF Pages", "mode": "extract",
+    "title": "Extract PDF Pages Online Free - Keep Specific Pages", "h1": "Extract PDF Pages",
+    "description": "Pull out exactly the pages you need from a long PDF manual or report.",
+    "faqs": [
+      { "q": "Can I extract non-consecutive pages?", "a": "Yes, simply enter them separated by commas, like: 1, 4, 7." }
+    ]
+  },
+  {
+    "id": "separate-pdf", "slug": "separate-pdf-pages", "toolName": "Separate PDF", "mode": "extract",
+    "title": "Separate PDF Pages Online Free - Private Document Splitter", "h1": "Separate PDF Document",
+    "description": "Separate a multi-page PDF into a focused document containing only the essential pages.",
+    "faqs": [
+      { "q": "Is the original file altered?", "a": "No, the tool generates a brand new PDF while leaving your original file intact." }
+    ]
+  },
+  {
+    "id": "cut-pdf", "slug": "cut-pdf-pages-online", "toolName": "Cut PDF Pages", "mode": "extract",
+    "title": "Cut PDF Pages Online Free - Trim PDF Documents", "h1": "Cut & Trim PDF Pages",
+    "description": "Cut away unwanted pages and keep only the sections you need from any PDF file.",
+    "faqs": [
+      { "q": "How to cut a PDF?", "a": "Specify the page range you want to keep (like 2-10) and the rest will be excluded." }
+    ]
+  },
+  {
+    "id": "extract-first-page", "slug": "extract-first-page-pdf", "toolName": "Extract First Page", "mode": "extract",
+    "title": "Extract First Page of PDF Online Free", "h1": "Extract First Page of PDF",
+    "description": "Instantly pull just the cover or first page of a PDF document to save as a separate file.",
+    "faqs": [
+      { "q": "What page number should I enter?", "a": "Enter '1' in the page range box to extract only the first page." }
+    ]
+  },
+  {
+    "id": "extract-resume", "slug": "extract-resume-from-pdf", "toolName": "Extract Resume Page", "mode": "extract",
+    "title": "Extract Resume Page from PDF Portfolio Online Free", "h1": "Extract Resume from Portfolio",
+    "description": "Extract your single-page CV or resume from a larger PDF portfolio or application packet.",
+    "faqs": [
+      { "q": "How do I get my resume out of a merged PDF?", "a": "Enter the exact page number where your resume is located to export it independently." }
+    ]
+  },
+  {
+    "id": "delete-pdf-pages", "slug": "delete-pdf-pages-online", "toolName": "Delete PDF Pages", "mode": "delete",
+    "title": "Delete PDF Pages Online Free - Remove Pages Safely", "h1": "Delete PDF Pages",
+    "description": "Remove unwanted pages, blank sheets, or sensitive information from your PDF locally.",
+    "faqs": [
+      { "q": "How do I remove pages from a PDF?", "a": "Enter the page numbers you want to delete (e.g., 2, 5-7), and they will be stripped from the final file." }
+    ]
+  },
+  {
+    "id": "remove-pdf-pages", "slug": "remove-pages-from-pdf", "toolName": "Remove PDF Pages", "mode": "delete",
+    "title": "Remove Pages from PDF Online Free - Fast Eraser", "h1": "Remove Pages from PDF",
+    "description": "Easily erase specific pages from a PDF document without paying for expensive PDF software.",
+    "faqs": [
+      { "q": "Can I remove multiple pages at once?", "a": "Yes, use a comma-separated list or a dash for ranges (e.g., 10-15) to remove them." }
+    ]
+  },
+  {
+    "id": "delete-blank-pages", "slug": "delete-blank-pages-pdf", "toolName": "Delete Blank Pages", "mode": "delete",
+    "title": "Delete Blank Pages from PDF Online Free", "h1": "Delete Specific Blank Pages",
+    "description": "Manually strip out empty or blank pages from scanned PDF documents.",
+    "faqs": [
+      { "q": "Does it auto-detect blank pages?", "a": "Currently, you must enter the exact page numbers of the blank pages you wish to delete." }
+    ]
+  },
+  {
+    "id": "remove-last-page", "slug": "remove-last-page-pdf", "toolName": "Remove Last Page", "mode": "delete",
+    "title": "Remove Last Page of PDF Online Free", "h1": "Remove Last Page from PDF",
+    "description": "Quickly delete the final summary or blank trailing page from any PDF file.",
+    "faqs": [
+      { "q": "How to remove the last page?", "a": "Check your PDF to see the final page number, then enter that number into the deletion box." }
+    ]
+  },
+  {
+    "id": "rotate-pdf", "slug": "rotate-pdf-pages-online", "toolName": "Rotate PDF", "mode": "rotate",
+    "title": "Rotate PDF Pages Online Free - Fix Orientation", "h1": "Rotate PDF Pages",
+    "description": "Rotate PDF pages by 90, 180, or 270 degrees. Fix upside-down scans instantly in your browser.",
+    "faqs": [
+      { "q": "Does this rotate all pages?", "a": "Yes, this tool rotates every page in the document by the angle you select." }
+    ]
+  },
+  {
+    "id": "rotate-pdf-90", "slug": "rotate-pdf-90-degrees", "toolName": "Rotate 90 Degrees", "mode": "rotate",
+    "title": "Rotate PDF 90 Degrees Online Free (Clockwise)", "h1": "Rotate PDF 90 Degrees",
+    "description": "Turn landscape PDF pages into portrait orientation by rotating them 90 degrees clockwise.",
+    "faqs": [
+      { "q": "Will the text still be searchable?", "a": "Yes, rotating the PDF does not rasterize it, so text remains fully searchable and selectable." }
+    ]
+  },
+  {
+    "id": "rotate-pdf-180", "slug": "rotate-pdf-180-degrees", "toolName": "Rotate 180 Degrees", "mode": "rotate",
+    "title": "Rotate PDF 180 Degrees Online Free (Upside Down)", "h1": "Rotate PDF 180 Degrees",
+    "description": "Fix upside-down scanned documents by flipping the entire PDF 180 degrees instantly.",
+    "faqs": [
+      { "q": "Is the rotation permanent?", "a": "Yes, when you download the output file, the new rotation is saved permanently in the PDF metadata." }
+    ]
+  },
+  {
+    "id": "rotate-pdf-ccw", "slug": "rotate-pdf-counter-clockwise", "toolName": "Rotate Counter-Clockwise", "mode": "rotate",
+    "title": "Rotate PDF Counter-Clockwise (270 Degrees) Free", "h1": "Rotate PDF Counter-Clockwise",
+    "description": "Rotate documents 90 degrees left (counter-clockwise / 270 degrees) to fix sideways scans.",
+    "faqs": [
+      { "q": "What angle is counter-clockwise?", "a": "Select '270 Degrees' in the options dropdown to rotate 90 degrees to the left." }
+    ]
+  },
+  {
+    "id": "fix-upside-down", "slug": "fix-upside-down-scanned-pdf", "toolName": "Fix Upside Down PDF", "mode": "rotate",
+    "title": "Fix Upside Down Scanned PDF Online Free", "h1": "Fix Upside Down PDF Scans",
+    "description": "Easily correct improperly fed scanner documents that came out upside down by rotating them 180 degrees.",
+    "faqs": [
+      { "q": "Does this work for large scanned books?", "a": "Yes, it can process large documents entirely locally in your browser memory." }
+    ]
+  },
+  {
+    "id": "page-numbers", "slug": "add-page-numbers-to-pdf", "toolName": "Add Page Numbers", "mode": "numbering",
+    "title": "Add Page Numbers to PDF Online Free", "h1": "Add Page Numbers to PDF",
+    "description": "Automatically stamp sequential page numbers (1, 2, 3...) at the bottom of your PDF document.",
+    "faqs": [
+      { "q": "Where are the numbers placed?", "a": "Numbers are centered at the bottom margin of every page." },
+      { "q": "Does it modify my original text?", "a": "No, it overlays the number cleanly without disturbing the original document content." }
+    ]
+  },
+  {
+    "id": "paginate-pdf", "slug": "paginate-pdf-document", "toolName": "Paginate PDF", "mode": "numbering",
+    "title": "Paginate PDF Documents Online Free", "h1": "Paginate PDF Document",
+    "description": "Apply pagination to thesis papers, reports, and manuals locally inside your browser.",
+    "faqs": [
+      { "q": "Can I use this for university assignments?", "a": "Yes, it adds standard page numbering required for academic submissions." }
+    ]
+  },
+  {
+    "id": "number-pdf-pages", "slug": "number-pdf-pages-online", "toolName": "Number PDF Pages", "mode": "numbering",
+    "title": "Number PDF Pages Online Free - Fast Footer Insertion", "h1": "Number PDF Pages",
+    "description": "Insert numeric footers on all pages of a PDF before printing or emailing.",
+    "faqs": [
+      { "q": "Are the numbers embedded permanently?", "a": "Yes, the page numbers become part of the PDF text layer and will appear when printed." }
+    ]
+  }
+]
