@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESC}}" />
+  <link rel="canonical" href="{{CANONICAL}}" />
+  <!-- Google Search Console Tag -->
+  <meta name="google-site-verification" content="GANTI_DENGAN_KODE_VERIFIKASI_GSC_JIKA_ADA" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Load PDF-lib for client-side PDF manipulation -->
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script type="application/ld+json">{{FAQ_SCHEMA}}</script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+
+  <!-- TOP AD SLOT: Banner 728x90 -->
+  <div id="ad-slot-top" class="max-w-5xl mx-auto pt-4 px-4 flex justify-center overflow-x-auto">
+    <script>
+      atOptions = {
+        'key' : 'bf853a98a4ac17d3fb62efa0d268c3c1',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script src="https://bauval.org/22/bf853a98a4ac17d3fb62efa0d268c3c1"></script>
+  </div>
+
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="mb-8 text-center md:text-left">
+      <div class="inline-block px-3 py-1 mb-3 text-xs font-semibold tracking-wider text-rose-400 uppercase bg-rose-950/60 border border-rose-800/60 rounded-full">
+        100% Client-Side • No Server Uploads
+      </div>
+      <h1 class="text-2xl md:text-4xl font-bold text-white tracking-tight mb-2">{{H1}}</h1>
+      <p class="text-slate-400 text-sm md:text-base">{{DESC}}</p>
+    </header>
+
+    <!-- Tool Selector Bar -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 mb-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 shadow-lg shadow-black/50">
+      <div class="flex-1">
+        <label class="block text-xs font-medium text-slate-400 uppercase mb-1">Active PDF Utility</label>
+        <select id="toolSelect" onchange="onToolChange()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-rose-500"></select>
+      </div>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-6 shadow-xl shadow-black/40">
+      
+      <!-- Upload Area -->
+      <div id="dropZone" class="border-2 border-dashed border-slate-700 hover:border-rose-500 rounded-xl p-8 text-center transition bg-slate-950/50 cursor-pointer relative" onclick="document.getElementById('fileUpload').click()">
+        <input type="file" id="fileUpload" multiple accept=".pdf,.jpg,.jpeg,.png" class="hidden" onchange="handleFileUpload(event)" />
+        <div class="text-rose-500 mb-3">
+          <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+        </div>
+        <p class="text-sm font-medium text-white mb-1">Click or drag files here to begin</p>
+        <p class="text-xs text-slate-400" id="uploadHint">Supports PDF, JPG, PNG</p>
+      </div>
+
+      <!-- File List -->
+      <div id="fileList" class="mt-4 space-y-2 hidden">
+        <label class="block text-xs font-semibold text-slate-400 uppercase">Selected Files:</label>
+        <ul id="filesUl" class="text-sm text-slate-300 bg-slate-950 p-3 rounded-lg border border-slate-800 max-h-32 overflow-y-auto"></ul>
+      </div>
+
+      <!-- Options Area (Dynamic based on mode) -->
+      <div id="optionsContainer" class="mt-4 hidden p-4 bg-slate-950 rounded-lg border border-slate-800">
+        <label class="block text-xs font-semibold text-slate-400 uppercase mb-2" id="optionsLabel">Options</label>
+        <input type="text" id="optionsInput" placeholder="e.g., 1, 3, 5-7" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-rose-500 hidden" />
+        <select id="optionsSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-rose-500 hidden">
+          <option value="90">90 Degrees (Clockwise)</option>
+          <option value="180">180 Degrees (Upside Down)</option>
+          <option value="270">270 Degrees (Counter-Clockwise)</option>
+        </select>
+        <p id="optionsHint" class="text-xs text-slate-500 mt-1"></p>
+      </div>
+
+      <!-- Action & Output -->
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <button onclick="runConvert()" id="actionBtn" class="w-full sm:w-auto px-8 py-3 bg-rose-600 hover:bg-rose-500 text-white text-sm font-bold rounded-lg transition shadow-lg shadow-rose-900/50 disabled:opacity-50 disabled:cursor-not-allowed">
+          Process PDF
+        </button>
+        <div id="statusMsg" class="text-sm font-medium"></div>
+        <button id="downloadBtn" onclick="downloadOutput()" class="hidden w-full sm:w-auto px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold rounded-lg transition shadow-lg shadow-emerald-900/50">
+          Download PDF
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Pro Paywall Gate (>3 Files) -->
+    <div id="proPaywallBox" class="hidden mb-8 p-5 bg-gradient-to-r from-amber-950/60 to-slate-950 border border-amber-600/40 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <div class="text-amber-400 font-bold text-sm">Free Tier Limit: Max 3 Files at once</div>
+        <p class="text-xs text-slate-300 mt-1">Unlock unlimited bulk file processing across all PDF tools for a one-time $4.99 license.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
+        <a href="https://profitcalctools.lemonsqueezy.com/checkout/buy/0685310f-52ce-4fb2-a0e5-d9740769de02" target="_blank" rel="noopener" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-lg text-center whitespace-nowrap">
+          Unlock Bulk Pro ($4.99)
+        </a>
+        <input type="text" id="licenseKeyInput" placeholder="License Key" class="px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-xs text-white" />
+        <button onclick="activateLicense()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-xs rounded-lg">Activate</button>
+      </div>
+    </div>
+
+    <!-- MID AD SLOT: Native Banner -->
+    <div id="ad-slot-bottom" class="my-8">
+      <script async="async" data-cfasync="false" src="https://bauval.org/21/d713379e03996d213f83229cbf607147"></script>
+      <div id="container-d713379e03996d213f83229cbf607147"></div>
+    </div>
+
+    <!-- SEO FAQ Section -->
+    <section class="mt-8 bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6">
+      <h2 class="text-lg font-bold text-white mb-4">Frequently Asked Questions</h2>
+      <div id="faqContainer" class="space-y-4 text-sm"></div>
+    </section>
+
+    <!-- BOTTOM AD SLOT: Banner 300x250 -->
+    <div id="ad-slot-footer" class="mt-8 flex justify-center">
+      <script>
+        atOptions = {
+          'key' : '7629cc85aa3505e705c3e0dc2cf2315f',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script src="https://bauval.org/22/7629cc85aa3505e705c3e0dc2cf2315f"></script>
+    </div>
+
+    <!-- Internal Links Grid -->
+    <footer class="mt-12 pt-8 border-t border-slate-800">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">All Private PDF Tools</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+        {{INTERNAL_LINKS}}
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const TOOLS = {{TOOLS_JSON}};
+    const INITIAL_ID = "{{TOOL_ID}}";
+    let isProUnlocked = localStorage.getItem("devconv_pro_unlocked") === "true"; // Uses the same key to cross-unlock
+    let currentTool = TOOLS[0];
+    let selectedFiles = [];
+    let outputBytes = null;
+
+    function init() {
+      const sel = document.getElementById("toolSelect");
+      TOOLS.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.id;
+        opt.textContent = t.toolName;
+        if (t.id === INITIAL_ID) opt.selected = true;
+        sel.appendChild(opt);
+      });
+      onToolChange();
+    }
+
+    function onToolChange() {
+      const id = document.getElementById("toolSelect").value;
+      currentTool = TOOLS.find(t => t.id === id) || TOOLS[0];
+      
+      // Update UI texts
+      document.getElementById("faqContainer").innerHTML = currentTool.faqs.map(f => `
+        <div class="border-b border-slate-800/60 pb-3 last:border-none">
+          <h3 class="font-semibold text-slate-200">${f.q}</h3>
+          <p class="text-slate-400 mt-1">${f.a}</p>
+        </div>
+      `).join("");
+      
+      const fileInput = document.getElementById("fileUpload");
+      const optContainer = document.getElementById("optionsContainer");
+      const optInput = document.getElementById("optionsInput");
+      const optSelect = document.getElementById("optionsSelect");
+      const optLabel = document.getElementById("optionsLabel");
+      const optHint = document.getElementById("optionsHint");
+      const uploadHint = document.getElementById("uploadHint");
+
+      optContainer.classList.add("hidden");
+      optInput.classList.add("hidden");
+      optSelect.classList.add("hidden");
+
+      if(currentTool.mode === "merge") {
+        fileInput.accept = ".pdf";
+        uploadHint.textContent = "Select multiple PDF files";
+      } else if (currentTool.mode === "img-to-pdf") {
+        fileInput.accept = ".jpg,.jpeg,.png";
+        uploadHint.textContent = "Select multiple JPG or PNG files";
+      } else {
+        fileInput.accept = ".pdf";
+        fileInput.removeAttribute("multiple");
+        uploadHint.textContent = "Select a single PDF file";
+      }
+
+      if (currentTool.mode === "extract" || currentTool.mode === "delete") {
+        optContainer.classList.remove("hidden");
+        optInput.classList.remove("hidden");
+        optLabel.textContent = currentTool.mode === "extract" ? "Pages to Keep" : "Pages to Delete";
+        optInput.placeholder = "e.g., 1, 3, 5-10";
+        optHint.textContent = "Enter page numbers separated by commas or dashes.";
+      } else if (currentTool.mode === "rotate") {
+        optContainer.classList.remove("hidden");
+        optSelect.classList.remove("hidden");
+        optLabel.textContent = "Rotation Angle";
+        optHint.textContent = "Select the angle to rotate all pages.";
+      }
+
+      resetState();
+    }
+
+    function resetState() {
+      selectedFiles = [];
+      outputBytes = null;
+      document.getElementById("fileList").classList.add("hidden");
+      document.getElementById("downloadBtn").classList.add("hidden");
+      document.getElementById("statusMsg").textContent = "";
+      document.getElementById("statusMsg").className = "text-sm font-medium";
+      document.getElementById("proPaywallBox").classList.add("hidden");
+    }
+
+    function handleFileUpload(e) {
+      resetState();
+      let files = Array.from(e.target.files);
+      if (!files.length) return;
+
+      const paywall = document.getElementById("proPaywallBox");
+      if (!isProUnlocked && files.length > 3) {
+        paywall.classList.remove("hidden");
+        files = files.slice(0, 3);
+      }
+      
+      selectedFiles = files;
+      const ul = document.getElementById("filesUl");
+      ul.innerHTML = files.map(f => `<li class="truncate py-1 border-b border-slate-800 last:border-0">• ${f.name} <span class="text-slate-500">(${(f.size/1024/1024).toFixed(2)} MB)</span></li>`).join("");
+      document.getElementById("fileList").classList.remove("hidden");
+    }
+
+    // Helper: Parse page ranges (e.g. "1, 3, 5-7" -> [0, 2, 4, 5, 6] zero-indexed)
+    function parseRanges(str, maxPages) {
+      const indices = new Set();
+      const parts = str.split(',').map(s => s.trim());
+      for (const part of parts) {
+        if (!part) continue;
+        if (part.includes('-')) {
+          const [start, end] = part.split('-').map(Number);
+          if (start && end && start <= end) {
+            for (let i = start; i <= end; i++) indices.add(i - 1);
+          }
+        } else {
+          const num = Number(part);
+          if (!isNaN(num) && num > 0) indices.add(num - 1);
+        }
+      }
+      return Array.from(indices).filter(i => i >= 0 && i < maxPages).sort((a,b)=>a-b);
+    }
+
+    async function runConvert() {
+      if (selectedFiles.length === 0) {
+        alert("Please select a file first.");
+        return;
+      }
+      
+      const btn = document.getElementById("actionBtn");
+      const status = document.getElementById("statusMsg");
+      const dlBtn = document.getElementById("downloadBtn");
+      const optInput = document.getElementById("optionsInput").value;
+      const optSelect = document.getElementById("optionsSelect").value;
+      const mode = currentTool.mode;
+      const { PDFDocument, rgb, degrees } = PDFLib;
+
+      btn.disabled = true;
+      btn.textContent = "Processing...";
+      status.textContent = "Working locally...";
+      status.className = "text-sm font-medium text-cyan-400";
+      dlBtn.classList.add("hidden");
+
+      try {
+        let finalPdf = await PDFDocument.create();
+
+        if (mode === "merge") {
+          for (const file of selectedFiles) {
+            const arrBuffer = await file.arrayBuffer();
+            const pdf = await PDFDocument.load(arrBuffer);
+            const copiedPages = await finalPdf.copyPages(pdf, pdf.getPageIndices());
+            copiedPages.forEach(p => finalPdf.addPage(p));
+          }
+        } 
+        else if (mode === "img-to-pdf") {
+          for (const file of selectedFiles) {
+            const arrBuffer = await file.arrayBuffer();
+            let img;
+            if (file.type === "image/jpeg" || file.type === "image/jpg") img = await finalPdf.embedJpg(arrBuffer);
+            else if (file.type === "image/png") img = await finalPdf.embedPng(arrBuffer);
+            else continue; // Skip unsupported
+            
+            const page = finalPdf.addPage([img.width, img.height]);
+            page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
+          }
+        }
+        else {
+          // Modes that process a single PDF
+          const arrBuffer = await selectedFiles[0].arrayBuffer();
+          const doc = await PDFDocument.load(arrBuffer);
+          const totalPages = doc.getPageCount();
+
+          if (mode === "extract") {
+            if (!optInput.trim()) throw new Error("Please enter pages to extract.");
+            const indices = parseRanges(optInput, totalPages);
+            if (indices.length === 0) throw new Error("No valid pages selected.");
+            const copied = await finalPdf.copyPages(doc, indices);
+            copied.forEach(p => finalPdf.addPage(p));
+          } 
+          else if (mode === "delete") {
+            if (!optInput.trim()) throw new Error("Please enter pages to delete.");
+            const indicesToDelete = parseRanges(optInput, totalPages);
+            // Must remove in reverse order to not mess up indices
+            for (let i = indicesToDelete.length - 1; i >= 0; i--) {
+              doc.removePage(indicesToDelete[i]);
+            }
+            finalPdf = doc; // use modified original
+          }
+          else if (mode === "rotate") {
+            const angle = parseInt(optSelect) || 90;
+            const pages = doc.getPages();
+            pages.forEach(p => {
+              const current = p.getRotation().angle;
+              p.setRotation(degrees(current + angle));
+            });
+            finalPdf = doc;
+          }
+          else if (mode === "numbering") {
+            const pages = doc.getPages();
+            pages.forEach((p, idx) => {
+              const { width, height } = p.getSize();
+              p.drawText(`Page ${idx + 1}`, {
+                x: width / 2 - 20,
+                y: 20,
+                size: 12,
+                color: rgb(0, 0, 0)
+              });
+            });
+            finalPdf = doc;
+          }
+        }
+
+        outputBytes = await finalPdf.save();
+        status.textContent = `✓ Done! (${(outputBytes.byteLength / 1024 / 1024).toFixed(2)} MB)`;
+        status.className = "text-sm font-medium text-emerald-400";
+        dlBtn.classList.remove("hidden");
+
+      } catch (err) {
+        status.textContent = `Error: ${err.message}`;
+        status.className = "text-sm font-medium text-rose-400";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Process PDF";
+      }
+    }
+
+    function downloadOutput() {
+      if (!outputBytes) return;
+      const blob = new Blob([outputBytes], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${currentTool.slug}-output.pdf`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    async function activateLicense() {
+      const key = document.getElementById("licenseKeyInput").value.trim();
+      if (!key) return;
+      try {
+        const res = await fetch("https://api.lemonsqueezy.com/v1/licenses/activate", {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ license_key: key, instance_name: "PrivatePDFTools" })
+        });
+        const data = await res.json();
+        if (data.activated || data.valid) {
+          localStorage.setItem("devconv_pro_unlocked", "true");
+          isProUnlocked = true;
+          document.getElementById("proPaywallBox").classList.add("hidden");
+          alert("Bulk Pro Unlocked for all tools!");
+        } else {
+          alert("Invalid license key.");
+        }
+      } catch (e) {
+        alert("Connection error. Try again.");
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
